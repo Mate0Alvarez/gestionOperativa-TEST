@@ -16,7 +16,7 @@ APACHE DEBE ESTAR INICIALIZADO
 		-"id" del ítem,
 		-"title" del item,
 		-"category_id" donde está publicado,
-		-"name" de la categoría.
+		-"domain_id" de la categoría.
 	Además imprimirá en pantalla el desglose de los resultados obtenidos.
   
 Implementando JAVASCRIPT Y JQUERY 
@@ -32,6 +32,6 @@ APACHE DEBE ESTAR INICIALIZADO
 		-"id" del ítem,
 		-"title" del item,
 		-"category_id" donde está publicado,
-		-"name" de la categoría.
+		-"domain_id" de la categoría.
 	Además, le ofrecerá al usuario descargar el archivo en el momento.
 	- En caso de no poder realizar la consulta, se desplegará un alert()
