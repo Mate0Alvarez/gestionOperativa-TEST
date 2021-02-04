@@ -10,5 +10,5 @@ APACHE DEBE ESTAR INICIALIZADO
 		-"id" del ítem,
 		-"title" del item,
 		-"category_id" donde está publicado,
-		-"name" de la categoría.
+		-"domain_id" de la categoría.
 	Además imprimirá en pantalla el desglose de los resultados obtenidos.
