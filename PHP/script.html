@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Gestión Operativa</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+  <style media="screen">
+  body{
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: center;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="loading" style="display:none;">
+      <h2>Aguarde un momento, estamos cargando los resultados...</h2>
+      <img src="loading.gif" alt="" style="width:50%;position:fixed;top:15;left:25%;">
+    </div>
+  </body>
+  <script type="text/javascript">
+  // capturamos la información requerida
+  var site_id = window.prompt("Ingrese un site_id", "MLA");
+  var seller_id = window.prompt("Ingrese un seller_id", "179571326");
+
+  // Mostramos el mensaje de carga
+  $('.loading').css('display','block');
+
+  // Enviaremos la información utilizando AJAX para crear un archivo JSON
+  $.ajax({
+      url: "/gestionOperativa-TEST/PHP/script.php", //URL a donde queremos enviamos la información
+      data: {
+          'site_id': site_id, //La información a enviar
+          'seller_id' : seller_id
+      },
+      type: 'POST', //El método
+      dataType: 'JSON', //Formato
+      success: function(response) {
+        console.log(response);
+        // Ocultamos el mensaje de carga
+        $('.loading').css('display','none');
+        // Ofrecemos al usuario descargar el archivo creado
+        var descarga = confirm("Se ha creado el archivo log exitosamente, ¿Desea descargar los resultados?");
+        if (descarga) {
+          var link=document.createElement('a'); //Creamos una etiqueta <a>
+          var filePath = "/gestionOperativa-TEST/PHP/productos.json" //declaramos la Ruta a utilizar
+          link.href = filePath; //La asignamos
+          link.download = filePath.substr(filePath.lastIndexOf('/') + 1); //Configuramos la ruta para que el navegador no abra una nueva ventana y descargue automaticamente
+          link.click();
+        }
+      },
+  });
+  </script>
+</html>
