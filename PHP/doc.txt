@@ -1,0 +1,14 @@
+// INTRSTUCCIONES DE USO //
+
+APACHE DEBE ESTAR INICIALIZADO
+
+- Abrir script.php con un editor de código.
+- Insertar la información necesaria para ejecutar la consulta ($SITE_ID && $SELLER_ID)
+- Con dicha información realizará la consulta:
+	- Ejecutar el archivo en el navegador.
+	- En caso de éxito, creará un archivo .json con la siguiente información:
+		-"id" del ítem,
+		-"title" del item,
+		-"category_id" donde está publicado,
+		-"name" de la categoría.
+	Además imprimirá en pantalla el desglose de los resultados obtenidos.
